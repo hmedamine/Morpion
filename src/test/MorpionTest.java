@@ -33,7 +33,6 @@ public class MorpionTest {
 	}
 
 	@Test
-	@Ignore
 	public void displayEqualityGame() {
 		Morpion game = new Morpion("3x3", "player1:X", "player2:O");
 		game.play("player1", "0x0");

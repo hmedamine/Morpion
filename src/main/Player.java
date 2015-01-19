@@ -25,7 +25,10 @@ public class Player implements Comparable<Player> {
 	}
 
 	public String report(int size, int order) {
-		return getRemainingGames(size, order) + " games for " + name;
+		int remainingGames = getRemainingGames(size, order);
+		if(remainingGames==0)
+			return "Game Over, equality";
+		return remainingGames + " games for " + name;
 	}
 
 	private int getRemainingGames(int size, int order) {
@@ -34,7 +37,7 @@ public class Player implements Comparable<Player> {
 				return size - (size / 2);
 			return size - (size / 2) - 1;
 		} else {
-			return size - Math.round(size / 2);
+			return size - (size / 2);
 		}
 	}
 
@@ -56,5 +59,7 @@ public class Player implements Comparable<Player> {
 		char c = (char) ('0' + i);
 		return c;
 	}
+	
+	
 
 }

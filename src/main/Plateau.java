@@ -25,6 +25,7 @@ public class Plateau {
 		} else {
 			String player1message = player1.report(remaingSize(), 1);
 			String player2message = player2.report(remaingSize(), 2);
+			if(player1message.equals(player2message)) return player1message;
 			return player1message + PLAYER_SEPARATOR + player2message;
 		}
 	}

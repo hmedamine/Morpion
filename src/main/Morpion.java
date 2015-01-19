@@ -38,9 +38,9 @@ public class Morpion {
 		return builder.toString();
 	}
 
-	public Matcher<String> display() {
-		// TODO Auto-generated method stub
-		return null;
+	public String display() {
+		StringBuilder builder=new StringBuilder();
+		return builder.toString();
 	}
 
 }
