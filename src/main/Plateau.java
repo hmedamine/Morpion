@@ -9,18 +9,35 @@ public class Plateau {
 	public Plateau(char plateauSize) {
 		this.squareSize = Integer.parseInt(Character.toString(plateauSize));
 	}
-	
-	public void addCase(Case caze){
+
+	public void addCase(Case caze) {
 		cases.add(caze);
 	}
 
 	private int remaingSize() {
-		return (squareSize * squareSize)-cases.size();
+		return (squareSize * squareSize) - cases.size();
 	}
 
 	public String report(Player player1, Player player2) {
-		String player1message = player1.report(remaingSize(),1);
-		String player2message = player2.report(remaingSize(),2);
-		return player1message+PLAYER_SEPARATOR+player2message;
+		if (hasWeHaveAWinner(player1,player2)!=null) {
+			Player winner=hasWeHaveAWinner(player1,player2);
+			return winner.report();
+		} else {
+			String player1message = player1.report(remaingSize(), 1);
+			String player2message = player2.report(remaingSize(), 2);
+			return player1message + PLAYER_SEPARATOR + player2message;
+		}
+	}
+
+	private Player hasWeHaveAWinner(Player player1, Player player2) {
+		if(player1.isAWinner()) return player1;
+		if(player2.isAWinner()) return player2;
+		return null;
+	}
+
+	public void isAlreadyFilled(Case caseToadd) {
+
+		if (cases.contains(caseToadd))
+			throw new BoxAlreadySelectedException();
 	}
 }

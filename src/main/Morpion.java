@@ -17,23 +17,24 @@ public class Morpion {
 	}
 
 	public void play(String playerName, String caze) {
-		Player player= findPlayer(playerName);
+		Player player = findPlayer(playerName);
 		char yPosition = caze.charAt(2);
 		char xPosition = caze.charAt(0);
-		Case caseToadd = new Case(xPosition,yPosition);
+		Case caseToadd = new Case(xPosition, yPosition);
+		plateau.isAlreadyFilled(caseToadd);
 		player.fillCase(caseToadd);
 		plateau.addCase(caseToadd);
 	}
 
 	private Player findPlayer(String playerName) {
-		if(player1.compareTo(new Player(playerName))==0)
+		if (player1.compareTo(new Player(playerName)) == 0)
 			return player1;
 		return player2;
 	}
 
 	public String report() {
-		StringBuilder builder=new StringBuilder();
-		builder.append(plateau.report(player1,player2));
+		StringBuilder builder = new StringBuilder();
+		builder.append(plateau.report(player1, player2));
 		return builder.toString();
 	}
 
