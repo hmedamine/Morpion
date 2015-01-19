@@ -40,6 +40,8 @@ public class Morpion {
 
 	public String display() {
 		StringBuilder builder=new StringBuilder();
+		
+//		builder.append(plateau.display());
 		return builder.toString();
 	}
 

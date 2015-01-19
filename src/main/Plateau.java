@@ -41,4 +41,12 @@ public class Plateau {
 		if (cases.contains(caseToadd))
 			throw new BoxAlreadySelectedException();
 	}
+
+//	public String display() {
+//		StringBuilder builder=new StringBuilder();
+//		for (Case caze : cases) {
+//			builder.append(caze.print());
+//		}
+//		return null;
+//	}
 }

@@ -18,4 +18,6 @@ public class Case {
 				return true;
 		return super.equals(obj);
 	}
+
+	
 }
